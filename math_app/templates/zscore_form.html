@@ -1,12 +1,16 @@
-<form method = "post" class = "form" style = "max-width: 90%" >
+<form method="post" class="form">
   {% csrf_token %}
   <div class="input-group mb-3">
     {% for field in fields %}
-        <span class="input-group-text">{{ field.label }}</span>
-        <input name="{{ field.name }}" type="number" class="form-control" value="{{ field.value }}" aria-label="{{ field.label }}">
+    <span class="input-group-text">{{ field.label }}</span>
+    <input
+      name="{{ field.name }}"
+      type="number"
+      class="form-control"
+      value="{{ field.value }}"
+      aria-label="{{ field.label }}"
+    />
     {% endfor %}
-    <button type = "submit" class = "btn btn-primary" style="height: 100%">
-      calculate
-    </button>
+    <button type="submit" class="btn btn-primary">calculate</button>
   </div>
 </form>

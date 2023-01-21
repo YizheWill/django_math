@@ -3,8 +3,10 @@ from math_app.forms import ZScoreForm
 
 # Create your views here.
 
+
 def index(request):
     return render(request, 'math_app/index.html')
+
 
 def zscore(request):
     if request.method == 'POST':
@@ -17,8 +19,14 @@ def zscore(request):
     else:
         return render(request, 'math_app/zscore.html', {'mean': '', 'std': '', 'val': '', 'z': ''})
 
+
 def binom(request):
     return render(request, 'math_app/binom.html')
 
+
 def clt(request):
     return render(request, 'math_app/clt.html')
+
+
+def hp_testing(request):
+    return render(request, 'math_app/hp_testing.html')

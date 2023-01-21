@@ -3,20 +3,20 @@
 {% load zscore_form_tag %}
 {% block content %}
 {% show_forms %}
-<form method = "post" class = "form" style = "max-width: 90%" >
+<form method="post" class="form">
   {% csrf_token %}
   <div class="input-group mb-3">
     <span class="input-group-text">mean</span>
-    <input name="mean" type="number" class="form-control" value="{{ mean }}" aria-label="mean">
+    <input name="mean" type="number" class="form-control" value="{{ mean }}" aria-label="mean"/>
     <span class="input-group-text">std</span>
-    <input name="std" type="number" class="form-control" value="{{ std }}" aria-label="std">
+    <input name="std" type="number" class="form-control" value="{{ std }}" aria-label="std"/>
     <span class="input-group-text">val</span>
-    <input name="val" type="number" class="form-control" value="{{ val }}" aria-label="val">
+    <input name="val" type="number" class="form-control" value="{{ val }}" aria-label="val"/>
     <span class="input-group-text">z</span>
-    <input name = "z" type="number" class="form-control" value="{{ z }}" aria-label="z" disabled>
-    <button type = "submit" class = "btn btn-primary" style="height: 100%">
+    <input name="z" type="number" class="form-control" value="{{ z }}" aria-label="z" disabled/>
+    <button type="submit" class="btn btn-primary">
       calculate
     </button>
   </div>
 </form>
-{% endblock %}
+{% endblock content %}
