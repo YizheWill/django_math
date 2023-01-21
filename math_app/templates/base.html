@@ -1,0 +1,33 @@
+{% load static %} {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %} {% bootstrap_messages %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+    <title>Math Project App</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-light sm-light">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" style="margin-left: 30px; font-weight: 900" href="/">MATH SOLVER</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" style="font-weight: {% if request.resolver_match.url_name == 'zscore' %}700{% else %}400{% endif %}" href="{% url 'zscore' %}">Z score</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-weight: {% if request.resolver_match.url_name == 'binom' %}700{% else %}400{% endif %}" href="{% url 'binom' %}">binomial</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-weight: {% if request.resolver_match.url_name == 'clt' %}700{% else %}400{% endif %}" href="{% url 'clt' %}">central limit theorom</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      {% block content %} {% endblock %}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %} {% bootstrap_messages %}
+{% load zscore_form_tag %}
+{% block content %}
+{% show_forms %}
+<form method = "post" class = "form" style = "max-width: 90%" >
+  {% csrf_token %}
+  <div class="input-group mb-3">
+    <span class="input-group-text">mean</span>
+    <input name="mean" type="number" class="form-control" value="{{ mean }}" aria-label="mean">
+    <span class="input-group-text">std</span>
+    <input name="std" type="number" class="form-control" value="{{ std }}" aria-label="std">
+    <span class="input-group-text">val</span>
+    <input name="val" type="number" class="form-control" value="{{ val }}" aria-label="val">
+    <span class="input-group-text">z</span>
+    <input name = "z" type="number" class="form-control" value="{{ z }}" aria-label="z" disabled>
+    <button type = "submit" class = "btn btn-primary" style="height: 100%">
+      calculate
+    </button>
+  </div>
+</form>
+{% endblock %}
