@@ -6,5 +6,5 @@ urlpatterns = [
     path('zscore', zscore, name='zscore'),
     path('binom', binom, name='binom'),
     path('clt', clt, name="clt"),
-    path('hp_testing', hp_testing, name='hp_testing)
+    path('hp_testing', hp_testing, name='hp_testing')
 ]
